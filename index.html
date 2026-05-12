@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>TeleText-Life</title>
+    <style>
+        body { margin:0; background:#000; font-family:monospace; color:#0ff; display:flex; align-items:center; justify-content:center; height:100vh; }
+        .teletext { width:820px; height:620px; background:#002; border:20px solid #111; box-shadow:0 0 30px #0ff; padding:10px; position:relative; display:flex; flex-direction:column; }
+        .header { background:#000; padding:5px 15px; display:flex; justify-content:space-between; align-items:center; font-size:28px; color:#fff; }
+        .content { flex:1; padding:15px; font-size:23px; line-height:1.4; color:#fff; }
+        .footer { background:#000; color:#0ff; padding:8px; font-size:18px; display:flex; justify-content:space-between; }
+        .yellow { color:#ff0; }
+        .cyan { color:#0ff; }
+    </style>
+</head>
+<body>
+<div class='teletext'>
+    <div class='header'>
+        <div>Teletext <span class='cyan'>300</span></div>
+        <div class='yellow' id='time'>SEP11 21:57:32</div>
+    </div>
+    <div class='content' id='content'>
+        <div style='text-align:center; font-size:28px; color:#ff0; margin-bottom:10px;'>NEWS</div>
+        <div style='text-align:center; font-size:42px; color:#ff0;'>HEADLINES</div>
+        <div>TERROR JET BLAZ DEVASTATES AMERICA <span class='cyan'>303</span></div>
+        <div style='margin-left:30px;'>THOUSANDS MAY HAVE DIED IN OUTRAGES</div>
+        <div>WORLD TRADE CENTRE TOWERS DESTROYED <span class='cyan'>304</span></div>
+        <div style='margin-left:30px;'>PENTAGON HIT 305 THIRD TARGET NAMED <span class='cyan'>306</span></div>
+        <div>AIRLINER PILOTS 'PROBABLY MURDERED' <span class='cyan'>307</span></div>
+        <div>BIN LADEN LINK 311 IN FOCUS SPECIAL <span class='cyan'>320</span></div>
+    </div>
+    <div class='footer'>
+        <div>Index  <span class='yellow'>3</span> 2 4  Hours 140</div>
+        <div>Latest 302  in Focus 320 Write 147</div>
+        <div style='text-align:right;'>TELE TEXT NATIONAL AND REGIONAL NEWS ON OUR WEBSITE <span class='yellow'>www.teletext.co.uk</span></div>
+    </div>
+</div>
+<script>
+    // Live clock
+    function updateTime() {
+        const el = document.getElementById('time');
+        setInterval(() => {
+            const d = new Date();
+            const date = d.toLocaleDateString('en-GB', {month:'short', day:'numeric'}).toUpperCase().replace(/ /g,'');
+            const time = d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+            el.textContent = date + ' ' + time;
+        }, 1000);
+    }
+    updateTime();
+    console.log('TeleText-Life ready! Open index.html in browser for full 90s experience.');
+</script>
+</body>
+</html>
