@@ -1,0 +1,25 @@
+:root { color-scheme: dark; }
+body { margin: 0; background: #000014; }
+.teletext-shell {
+  width: 100vw; height: 100vh; display: grid; place-items: center;
+  background: radial-gradient(circle at 50% 30%, #00003d, #000);
+  cursor: crosshair;
+}
+.teletext-grid {
+  color: #00ffff;
+  background: #000;
+  font-family: "Teletext", "Courier New", monospace;
+  font-size: clamp(10px, 2.2vw, 24px);
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  padding: 1rem;
+  box-shadow: 0 0 20px #00f4;
+}
+.crt .teletext-grid {
+  text-shadow: 0 0 3px #0ff;
+  background-image: repeating-linear-gradient(to bottom, rgba(255,255,255,.02), rgba(255,255,255,.02) 1px, transparent 2px, transparent 3px);
+}
+.overlay {
+  position: absolute; top: 1rem; right: 1rem; color: #ff0; background: #0015; padding: .4rem .6rem;
+  border: 1px solid #ff0;
+}
